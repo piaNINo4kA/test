@@ -8,43 +8,44 @@ block main
         .content__title 
             h1 Виберіть категорію
         .content-items
-            a(href="#").content-item.item
-                .item__pic
-                    img(src="static/img/item1.png", alt="")
-                .item__text
-                    p Автотранспорт
-            a(href="#").content-item.item
-                .item__pic
-                    img(src="static/img/item2.png", alt="")
-                .item__text
-                    p Будівництво, архітектура, землекористування
-            a(href="#").content-item.item
-                .item__pic
-                    img(src="static/img/item3.png", alt="")
-                .item__text
-                    p Громадянство
-            a(href="#").content-item.item
-                .item__pic
-                    img(src="static/img/item4.png", alt="")
-                .item__text
-                    p Захист прав дитини
-            a(href="#").content-item.item
-                .item__pic
-                    img(src="static/img/item5.png", alt="")
-                .item__text
-                    p Реєстрація місця проживання/перебування
-            a(href="#").content-item.item
-                .item__pic
-                    img(src="static/img/item6.png", alt="")
-                .item__text
-                    p Підприємницька діяльність
-            a(href="#").content-item.item
-                .item__pic
-                    img(src="static/img/item7.png", alt="")
-                .item__text
-                    p Санітарне та епідемічне благополуччя, ветеринарна медицина
-            a(href="#").content-item.item
-                .item__pic
-                    img(src="static/img/item8.png", alt="")
-                .item__text
-                    p Комунальне господарство                                                        
+            -
+                var item1 = {
+                    pic: "static/img/item1.png",
+                    text: "Автотранспорт"
+                };
+                var item2 = {
+                    pic: "static/img/item2.png",
+                    text: "Будівництво, архітектура, землекористування"
+                };
+                var item3 = {
+                    pic: "static/img/item3.png",
+                    text: "Громадянство"
+                };
+                var item4 = {
+                    pic: "static/img/item4.png",
+                    text: "Захист прав дитини"
+                };
+                var item5 = {
+                    pic: "static/img/item5.png",
+                    text: "Реєстрація місця проживання/перебування"
+                };
+                var item6 = {
+                    pic: "static/img/item6.png",
+                    text: "Підприємницька діяльність"
+                };
+                var item7 = {
+                    pic: "static/img/item7.png",
+                    text: "Санітарне та епідемічне благополуччя, ветеринарна медицина"
+                };
+                var item8 = {
+                    pic: "static/img/item8.png",
+                    text: "Комунальне господарство"
+                };
+                var items = [item1, item2, item3, item4, item5, item6, item7, item8];
+            each item in items   
+                a(href="#").content-item.item
+                    .item__pic
+                        img(src=item.pic, alt="")
+                    .item__text
+                        p 
+                            =item.text                                                  
