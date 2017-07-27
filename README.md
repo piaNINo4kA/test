@@ -1,33 +1,56 @@
-# generator-vintage-frontend
+# Vintage
 
-[![NPM version][npm-image]][npm-url]
-![][license-url]
+Vintage start project.
 
-Yeoman generator for modern front-end apps.
+## Overview
 
-It is recommended to use [vintage-cli](https://github.com/vintage-web-production/vintage-cli/) for updating/running/building generated project.
+* [Installation](#markdown-header-installation)
+* [WebStorm configuration](#markdown-header-webstorm-configuration)
+* [NPM scripts](#markdown-header-npm-scripts)
+* [Public API](#markdown-header-public-api)
+* [JSDoc](#markdown-header-jsdoc)
+* [Notes](#markdown-header-notes)
 
-## Prerequisites ##
+## Installation
 
-##### Install [yeoman](http://yeoman.io/):
-`npm install -g yo`
+In order to start working with project, you must:
 
-##### Install [generator-vintage-frontend](https://www.npmjs.com/package/generator-vintage-frontend):
-`npm install -g generator-vintage-frontend`
+#### Clone repository to your local machine
 
-> prepend with `sudo` if you are running on `*nix` OS.
+```
+git clone https://bitbucket.org/vintageua/vintage-start-proj.git
+```
 
-## Use generator-vintage-frontend ##
+#### Install dependencies
 
-`yo vintage-frontend`
+npm
+```
+npm i -g jscs && npm i
+```
 
-> Answer questions
+yarn
+```
+yarn add global jscs && yarn install
+```
 
-![vintage-frontend installation](http://i.imgur.com/NssMS9y.png "vintage-frontend questions")
+## WebStorm configuration
 
-Done!
+Turn off 'Safe write' option
+```
+Settings | Appearance & Behavior | System Settings | Use "safe write"
+```
 
-## After installation ##
+Change ECMAScript version
+```
+Settings | Languages & Frameworks | Javascript | Javascript language version: "ECMAScript6"
+```
+
+Enable JSCS linter
+```
+Settings | Languages & Frameworks | Javascript | Code Quality Tools | JSCS | "Enable"
+```
+
+## NPM scripts
 
 Start development
 
@@ -35,16 +58,48 @@ Start development
 npm run development
 ```
 
-Build production bundle
+Build production bundle (build '.min' files, prettify html)
 
 ```
 npm run production
 ```
 
-## License ##
+## Public API
 
-[MIT License](https://github.com/Vintage-web-production/generator-vintage-frontend/blob/master/LICENSE)
+Path: `js/components/publicAPI` (example)
 
-[npm-url]: https://www.npmjs.com/package/vintage-cli
-[npm-image]: https://badge.fury.io/js/generator-vintage-frontend.svg
-[license-url]: https://img.shields.io/npm/l/express.svg
+Public API is created for back-end developers.
+
+It should contain methods to attach / initialize / destroy jquery plugins etc.
+
+## JSDoc
+
+Install JSDoc globally
+
+```
+npm install jsdoc -g
+```
+
+Generate docs
+
+```
+npm run-script compileDocs
+```
+
+Open docs
+```
+npm run-script openDocs
+```
+
+## Notes
+
+1. Before pushing to Bitbucket repository (or before transferring the project to Back-end department) make sure to run `production` bundle.
+2. Ensure all of your Public API's has both `init` and `destroy` methods.
+
+## Built with
+
+* [Gulp](http://gulpjs.com/)
+* [Pug](https://github.com/pugjs/pug)
+* [Webpack](https://webpack.js.org/)
+* [Sass](http://sass-lang.com/)
+* [Babel](https://babeljs.io/)
