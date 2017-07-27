@@ -1,0 +1,18 @@
+.header {
+	background-color: $darkGrey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+.header__title {
+	color: white;
+  font-size: 33px;
+  	@media screen and (max-width: $tablet) {
+		font-size: 25px;
+
+	}
+}
+.header__img {
+	margin-right: 23px;
+}

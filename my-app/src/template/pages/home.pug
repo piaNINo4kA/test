@@ -1,0 +1,50 @@
+extends ../extend/default
+
+block variables
+    - var title = 'Home page';
+
+block main
+    main.content(data-page='home')
+        .content__title 
+            h1 Виберіть категорію
+        .content-items
+            a(href="#").content-item.item
+                .item__pic
+                    img(src="static/img/item1.png", alt="")
+                .item__text
+                    p Автотранспорт
+            a(href="#").content-item.item
+                .item__pic
+                    img(src="static/img/item2.png", alt="")
+                .item__text
+                    p Будівництво, архітектура, землекористування
+            a(href="#").content-item.item
+                .item__pic
+                    img(src="static/img/item3.png", alt="")
+                .item__text
+                    p Громадянство
+            a(href="#").content-item.item
+                .item__pic
+                    img(src="static/img/item4.png", alt="")
+                .item__text
+                    p Захист прав дитини
+            a(href="#").content-item.item
+                .item__pic
+                    img(src="static/img/item5.png", alt="")
+                .item__text
+                    p Реєстрація місця проживання/перебування
+            a(href="#").content-item.item
+                .item__pic
+                    img(src="static/img/item6.png", alt="")
+                .item__text
+                    p Підприємницька діяльність
+            a(href="#").content-item.item
+                .item__pic
+                    img(src="static/img/item7.png", alt="")
+                .item__text
+                    p Санітарне та епідемічне благополуччя, ветеринарна медицина
+            a(href="#").content-item.item
+                .item__pic
+                    img(src="static/img/item8.png", alt="")
+                .item__text
+                    p Комунальне господарство                                                        
